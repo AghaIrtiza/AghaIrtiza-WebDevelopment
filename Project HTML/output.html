@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Page</title>
+    <script>
+        function getQueryParams() {
+            const params = new URLSearchParams(window.location.search);
+            const name = params.get('name');
+            const password = params.get('password');
+            const email = params.get('email');
+            const gender = params.get('gender');
+            document.getElementById('output').innerHTML = `Name: ${name} <br> Password: ${password} <br> Email: ${email} <br> Gender: ${gender}`;
+        }
+    </script>
+</head>
+<body onload="getQueryParams()">
+    <h1>Received Data</h1>
+    <div id="output"></div>
+    <button onclick="window.history.back()">Go Back</button>
+</body>
+</html>
