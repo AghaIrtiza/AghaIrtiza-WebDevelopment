@@ -3,7 +3,7 @@ function printInDemo(toPrint){
 }
 let number1 = 0;
 let number2 = 20;
-let number3 = 30;
+let number3 = 30; 
 // x = 100;
 let arithematicOperation = (number1 + number2) ** number3 ;
 // const a = 10;
