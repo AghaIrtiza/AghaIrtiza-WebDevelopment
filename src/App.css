@@ -1,0 +1,217 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #282c34;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+/* Header and main title */
+.App-header {
+  max-width: 100%;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+/* Input container styles */
+.input-container {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  resize: none;
+  margin-bottom: 10px;
+  background-color: #f4f4f4;
+  color: #333;
+}
+textarea:disabled{
+  background-color: gray;
+}
+
+textarea:focus {
+  border-color: #61dafb;
+  background-color: white;
+}
+
+/* Edit button styles */
+.edit-button {
+  padding: 8px 16px;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #21a1f1;
+}
+
+.edit-button:active {
+  background-color: #1b8bdb;
+}
+
+/* Character buttons styles */
+.char-buttons {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.char-buttons button {
+  padding: 12px 24px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: white;
+  min-width: 80px;
+}
+
+.char-buttons button:hover {
+  opacity: 0.8;
+}
+
+/* Custom button colors */
+.char-buttons button:nth-child(1) {
+  background-color: purple;
+}
+
+.char-buttons button:nth-child(2) {
+  background-color: brown;
+}
+
+.char-buttons button:nth-child(3) {
+  background-color: green;
+}
+
+.char-buttons button:last-child {
+  background-color: #adaf4c; /* Save button green */
+}
+
+
+/* Search container */
+.search-container {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.search-box {
+  padding: 10px;
+  font-size: 16px;
+  width: 80%;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.search-box:focus {
+  border-color: #61dafb;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 1em;
+  background-color: #61dafb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #21a1f1;
+}
+
+/* Prediction result */
+.prediction {
+  margin-top: 20px;
+}
+
+.prediction p {
+  font-size: 1.2em;
+}
+
+/* Mobile-responsive styles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  textarea {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .char-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .char-buttons button {
+    min-width: 70px;
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+
+  .search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-box {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .input-container {
+    width: 100%;
+  }
+
+  .edit-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2em;
+  }
+
+  textarea {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .char-buttons button {
+    padding: 10px 20px;
+    font-size: 0.9em;
+  }
+
+  .search-box {
+    font-size: 12px;
+  }
+
+  button {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+}
