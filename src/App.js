@@ -73,9 +73,13 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>6-Character Next Character Prediction</h1>
-
+      <header className="App-header" style={{ textAlign: "center", padding: "20px", color: "#ffffff" }}>
+        <h1 style={{ fontSize: "2.5rem", color: "#4CAF50", marginBottom: "10px" }}>
+          Character Prediction App
+        </h1>
+        <p style={{ fontSize: "1.2rem", color: "#ddd", margin: "20px 20px" }}>
+          Enter or update a sequence of characters using <b>T, D,</b> and <b>E</b>.
+        </p>
         {/* Input string and Edit/Save button */}
         <div className="input-container">
           <textarea
@@ -94,9 +98,9 @@ function App() {
 
         {/* Add character buttons */}
         <div className="char-buttons">
-          <button style={{backgroundColor:"purple"}} onClick={() => addCharacter("D")}>D</button>
-          <button style={{backgroundColor:"brown"}} onClick={() => addCharacter("T")}>T</button>
-          <button style={{backgroundColor:"green"}} onClick={() => addCharacter("E")}>E</button>
+          <button style={{ backgroundColor: "purple" }} onClick={() => addCharacter("D")}>D</button>
+          <button style={{ backgroundColor: "brown" }} onClick={() => addCharacter("T")}>T</button>
+          <button style={{ backgroundColor: "green" }} onClick={() => addCharacter("E")}>E</button>
           <button className="edit-button" onClick={saveString}>
             Save
           </button>
@@ -119,7 +123,7 @@ function App() {
           <p>{prediction}</p>
         </div>
       </header>
-    </div>
+    </div >
   );
 }
 
