@@ -5,8 +5,9 @@ import "./App.css";
 function App() {
   const [inputString, setInputString] = useState(""); // Stores the user's input string
   const [isEditable, setIsEditable] = useState(false); // Controls whether the input is editable
-  const [searchKey, setSearchKey] = useState(""); // Stores the 6-character input for searching
+  const [searchKey, setSearchKey] = useState(""); // Stores the input for searching
   const [prediction, setPrediction] = useState(""); // Stores the predicted next character
+  const [charCount, setCharCount] = useState(10); // Stores the number of characters for prediction
 
   // Load the string from local storage when the component mounts
   useEffect(() => {
@@ -38,8 +39,6 @@ function App() {
     const value = e.target.value.toUpperCase(); // Convert to uppercase
     if (/^[TDE]*$/.test(value)) {
       setInputString(value); // Update only if valid
-    } else {
-      // alert("Only characters T, D, and E are allowed!");
     }
   };
 
@@ -48,26 +47,34 @@ function App() {
     const value = e.target.value.toUpperCase(); // Convert to uppercase
     if (/^[TDE]*$/.test(value)) {
       setSearchKey(value); // Update only if valid
+    }
+  };
+
+  // Handle changes in the character count
+  const handleCharCountChange = (e) => {
+    const value = parseInt(e.target.value, 10);
+    if (!isNaN(value) && value > 0) {
+      setCharCount(value); // Update only if valid
     } else {
-      // alert("Only characters T, D, and E are allowed!");
+      alert("Please enter a valid positive number!");
     }
   };
 
   // Predict the next character
   const predictNextCharacter = () => {
-    if (searchKey.length !== 6) {
-      alert("Please enter exactly 6 characters for the search!");
+    if (searchKey.length !== charCount) {
+      alert(`Please enter exactly ${charCount} characters for the search!`);
       return;
     }
 
     const index = inputString.indexOf(searchKey); // Find the first occurrence of the searchKey
-    if (index === -1 || index + 6 >= inputString.length) {
+    if (index === -1 || index + charCount >= inputString.length) {
       setPrediction("No predictions available.");
       return;
     }
 
     // Get the character that comes immediately after the match
-    const nextChar = inputString.charAt(index + 6);
+    const nextChar = inputString.charAt(index + charCount);
     setPrediction(`Prediction is: "${nextChar}"`);
   };
 
@@ -93,7 +100,6 @@ function App() {
           <button className="edit-button" onClick={toggleEditable}>
             {isEditable ? "Save Correction" : "Make Correction"}
           </button>
-
         </div>
 
         {/* Add character buttons */}
@@ -106,12 +112,26 @@ function App() {
           </button>
         </div>
 
+        {/* Set character count */}
+        <div className="char-count-container">
+          <label htmlFor="charCount" style={{ marginRight: "10px", color: "#fff" }}>
+            Set number of characters for prediction:
+          </label>
+          <input
+            id="charCount"
+            type="number"
+            value={charCount}
+            onChange={handleCharCountChange}
+            min="1"
+          />
+        </div>
+
         {/* Search input */}
         <div className="search-container">
           <input
             className="search-box"
             type="text"
-            placeholder="Enter 6 characters to search (T, D, E only)..."
+            placeholder={`Enter ${charCount} characters to search (T, D, E only)...`}
             value={searchKey}
             onChange={handleSearchChange}
           />
@@ -123,7 +143,7 @@ function App() {
           <p>{prediction}</p>
         </div>
       </header>
-    </div >
+    </div>
   );
 }
 

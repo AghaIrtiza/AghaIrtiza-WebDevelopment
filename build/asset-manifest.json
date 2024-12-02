@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/firebase-testing/static/css/main.72fb5255.css",
-    "main.js": "/firebase-testing/static/js/main.534ba82a.js",
-    "static/js/453.98f5f170.chunk.js": "/firebase-testing/static/js/453.98f5f170.chunk.js",
-    "index.html": "/firebase-testing/index.html",
-    "main.72fb5255.css.map": "/firebase-testing/static/css/main.72fb5255.css.map",
-    "main.534ba82a.js.map": "/firebase-testing/static/js/main.534ba82a.js.map",
-    "453.98f5f170.chunk.js.map": "/firebase-testing/static/js/453.98f5f170.chunk.js.map"
+    "main.css": "/AghaIrtiza-WebDevelopment/static/css/main.72fb5255.css",
+    "main.js": "/AghaIrtiza-WebDevelopment/static/js/main.28d2b22f.js",
+    "static/js/453.98f5f170.chunk.js": "/AghaIrtiza-WebDevelopment/static/js/453.98f5f170.chunk.js",
+    "index.html": "/AghaIrtiza-WebDevelopment/index.html",
+    "main.72fb5255.css.map": "/AghaIrtiza-WebDevelopment/static/css/main.72fb5255.css.map",
+    "main.28d2b22f.js.map": "/AghaIrtiza-WebDevelopment/static/js/main.28d2b22f.js.map",
+    "453.98f5f170.chunk.js.map": "/AghaIrtiza-WebDevelopment/static/js/453.98f5f170.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.72fb5255.css",
-    "static/js/main.534ba82a.js"
+    "static/js/main.28d2b22f.js"
   ]
 }
